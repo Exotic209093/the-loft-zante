@@ -1,3 +1,10 @@
+const featured = [
+  { name: "Mojito", price: "€10.00", desc: "Captain Morgan’s rum, fresh mint, sugar and fresh lime." },
+  { name: "Strawberry Mojito", price: "€11.00", desc: "Captain Morgan’s rum, fresh strawberries, fresh mint, sugar and lime." },
+  { name: "Pornstar Martini", price: "€10.00", desc: "Vanilla Smirnoff, Passoa, passion fruit juice and a side of Prosecco." },
+  { name: "Aperol Spritz", price: "€9.00", desc: "Aperol, Prosecco, soda water and fresh orange." },
+];
+
 const categories = [
   {
     name: "Fruity",
@@ -24,7 +31,7 @@ const categories = [
     items: [
       { name: "Pina Colada", price: "€10.00", desc: "Captain Morgans Rum, Malibu, Cream, Pineapple Juice" },
       { name: "Drunken Oreo", price: "€10.00", desc: "Vanilla Smirnoff Vodka, Baileys, Crushed Oreos & Cream" },
-      { name: "Aftereight", price: "€10.00", desc: "Bailey's Mint Liquor, Kahlua, Chocolate Milk & Cream" },
+      { name: "Aftereight", price: "€10.00", desc: "Bailey’s Mint Liquor, Kahlua, Chocolate Milk & Cream" },
     ],
   },
   {
@@ -83,22 +90,50 @@ export default function Drinks() {
   return (
     <section id="drinks" className="py-24 bg-loft-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section header */}
         <div className="text-center mb-16">
-          <p className="text-loft-terracotta uppercase tracking-[0.2em] text-sm mb-3">
-            What We Pour
+          <p className="text-loft-green uppercase tracking-[0.2em] text-sm mb-3">
+            Something to shake up your night
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-loft-cream mb-6">
-            Cocktails Menu
+            Cocktails
           </h2>
-          <p className="text-loft-stone text-lg max-w-2xl mx-auto leading-relaxed">
-            From fruity favourites to premium classics — every drink crafted fresh at the bar.
-          </p>
         </div>
 
+        {/* Featured cocktails */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {featured.map((item) => (
+            <div
+              key={item.name}
+              className="bg-loft-dark-card border border-loft-green/15 rounded-2xl p-6 hover:border-loft-green/40 transition-colors duration-300"
+            >
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="font-display text-lg font-semibold text-loft-cream">
+                  {item.name}
+                </h3>
+                <span className="text-loft-green font-semibold text-lg whitespace-nowrap ml-2">
+                  {item.price}
+                </span>
+              </div>
+              <p className="text-loft-cream-dim text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Happy Hour banner */}
+        <div className="bg-loft-green/10 border border-loft-green/30 rounded-2xl p-8 text-center mb-16">
+          <p className="text-loft-green uppercase tracking-[0.2em] text-xs mb-2">Happy Hour</p>
+          <p className="font-display text-2xl sm:text-3xl font-bold text-loft-cream mb-2">
+            2 cocktails for €15
+          </p>
+          <p className="text-loft-cream-dim text-sm">Selected cocktails only · 18:00 – 20:00</p>
+        </div>
+
+        {/* Full cocktail categories */}
         <div className="space-y-16">
           {categories.map((category) => (
             <div key={category.name}>
-              <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
+              <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-green border-b border-loft-green/20 pb-3 mb-8">
                 {category.name}
               </h3>
               <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
@@ -106,9 +141,9 @@ export default function Drinks() {
                   <div key={item.name} className="flex justify-between items-start gap-4">
                     <div className="flex-1 min-w-0">
                       <p className="text-loft-cream font-medium text-lg">{item.name}</p>
-                      <p className="text-loft-stone text-sm mt-1 leading-relaxed">{item.desc}</p>
+                      <p className="text-loft-cream-dim text-sm mt-1 leading-relaxed">{item.desc}</p>
                     </div>
-                    <span className="text-loft-amber font-semibold text-lg whitespace-nowrap shrink-0">
+                    <span className="text-loft-green font-semibold text-lg whitespace-nowrap shrink-0">
                       {item.price}
                     </span>
                   </div>
@@ -119,8 +154,8 @@ export default function Drinks() {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-loft-stone text-sm italic">
-            Prices in EUR. Full menu including beers, spirits, shots & food available at the bar.
+          <p className="text-loft-cream-dim text-sm italic">
+            Sample menu &amp; prices · Cocktail photography is illustrative.
           </p>
         </div>
       </div>

@@ -201,27 +201,56 @@ const shotSpecials = [
   { name: "Jagerbomb", price: "€5.00", desc: "Jagermeister & Red Bull Energy Drink" },
 ];
 
+function MenuSection({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="mb-16">
+      <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-green border-b border-loft-green/20 pb-3 mb-8">
+        {title}
+      </h3>
+      {children}
+    </div>
+  );
+}
+
+function PriceRow({ name, price }: { name: string; price: string }) {
+  return (
+    <div className="flex justify-between items-center">
+      <span className="text-loft-cream-dim">{name}</span>
+      <span className="text-loft-green font-medium">{price}</span>
+    </div>
+  );
+}
+
+function DescRow({ name, price, desc }: { name: string; price: string; desc?: string }) {
+  return (
+    <div className="flex justify-between items-start gap-4">
+      <div>
+        <span className="text-loft-cream font-medium">{name}</span>
+        {desc && <p className="text-loft-cream-dim text-sm mt-1">{desc}</p>}
+      </div>
+      <span className="text-loft-green font-medium whitespace-nowrap">{price}</span>
+    </div>
+  );
+}
+
 export default function FullMenu() {
   return (
-    <section id="menu" className="py-24 bg-loft-charcoal">
+    <section id="menu" className="py-24 bg-loft-dark-card">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-loft-terracotta uppercase tracking-[0.2em] text-sm mb-3">
-            Full Bar Menu
+          <p className="text-loft-green uppercase tracking-[0.2em] text-sm mb-3">
+            Find your favourite pour
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-loft-cream mb-6">
-            Drinks & More
+            Premium Spirits &amp; More
           </h2>
-          <p className="text-loft-stone text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-loft-cream-dim text-lg max-w-2xl mx-auto leading-relaxed">
             Spirits, beers, wines, shots, and everything in between. All prices in EUR.
           </p>
         </div>
 
         {/* Spirits */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Spirits
-          </h3>
+        <MenuSection title="Spirits">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
             {spiritCategories.map((category) => (
               <div key={category.name}>
@@ -230,223 +259,139 @@ export default function FullMenu() {
                 </h4>
                 <div className="space-y-2">
                   {category.items.map((item) => (
-                    <div key={item.name} className="flex justify-between items-center">
-                      <span className="text-loft-stone">{item.name}</span>
-                      <span className="text-loft-amber font-medium">{item.price}</span>
-                    </div>
+                    <PriceRow key={item.name} name={item.name} price={item.price} />
                   ))}
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         {/* Wine & Bubbles */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Wine & Bubbles
-          </h3>
+        <MenuSection title="Wine & Bubbles">
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-2">
             {wineAndBubbles.map((item) => (
-              <div key={item.name} className="flex justify-between items-center">
-                <span className="text-loft-stone">{item.name}</span>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <PriceRow key={item.name} name={item.name} price={item.price} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         {/* Shots */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Shots
-          </h3>
+        <MenuSection title="Shots">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-2">
             {shots.map((item) => (
-              <div key={item.name} className="flex justify-between items-center">
-                <span className="text-loft-stone">{item.name}</span>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <PriceRow key={item.name} name={item.name} price={item.price} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         {/* Bombs */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Bombs
-          </h3>
+        <MenuSection title="Bombs">
           <div className="space-y-2">
             {bombs.map((item) => (
-              <div key={item.name} className="flex justify-between items-start gap-4">
-                <div>
-                  <span className="text-loft-cream font-medium">{item.name}</span>
-                  {item.desc && <p className="text-loft-stone text-sm mt-1">{item.desc}</p>}
-                </div>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <DescRow key={item.name} name={item.name} price={item.price} desc={item.desc} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         {/* Alcopops */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Alcopops
-          </h3>
+        <MenuSection title="Alcopops">
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-2">
             {alcopops.map((item) => (
-              <div key={item.name} className="flex justify-between items-center">
-                <span className="text-loft-stone">{item.name}</span>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <PriceRow key={item.name} name={item.name} price={item.price} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         {/* Ciders */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Ciders
-          </h3>
+        <MenuSection title="Ciders">
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-2">
             {ciders.map((item) => (
-              <div key={item.name} className="flex justify-between items-center">
-                <span className="text-loft-stone">{item.name}</span>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <PriceRow key={item.name} name={item.name} price={item.price} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         {/* Bottled Beers */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Bottled Beers
-          </h3>
+        <MenuSection title="Bottled Beers">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-2">
             {bottledBeers.map((item) => (
-              <div key={item.name} className="flex justify-between items-center">
-                <span className="text-loft-stone">{item.name}</span>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <PriceRow key={item.name} name={item.name} price={item.price} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
-        {/* Draught Beers */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Draught
-          </h3>
+        {/* Draught */}
+        <MenuSection title="Draught">
           <div className="overflow-x-auto">
             <table className="w-full max-w-2xl">
               <thead>
-                <tr className="border-b border-loft-amber/20">
-                  <th className="text-left text-loft-stone font-medium py-2">Beer</th>
-                  <th className="text-right text-loft-stone font-medium py-2">½ Pint</th>
-                  <th className="text-right text-loft-stone font-medium py-2">Pint</th>
+                <tr className="border-b border-loft-green/20">
+                  <th className="text-left text-loft-cream-dim font-medium py-2">Beer</th>
+                  <th className="text-right text-loft-cream-dim font-medium py-2">½ Pint</th>
+                  <th className="text-right text-loft-cream-dim font-medium py-2">Pint</th>
                 </tr>
               </thead>
               <tbody>
                 {draughtBeers.map((item) => (
-                  <tr key={item.name} className="border-b border-loft-amber/5">
+                  <tr key={item.name} className="border-b border-loft-green/5">
                     <td className="text-loft-cream py-2">{item.name}</td>
-                    <td className="text-right text-loft-amber font-medium py-2">{item.halfPint}</td>
-                    <td className="text-right text-loft-amber font-medium py-2">{item.pint}</td>
+                    <td className="text-right text-loft-green font-medium py-2">{item.halfPint}</td>
+                    <td className="text-right text-loft-green font-medium py-2">{item.pint}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
+        </MenuSection>
 
         {/* Mocktails */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Mocktails
-          </h3>
+        <MenuSection title="Mocktails">
           <div className="space-y-4">
             {mocktails.map((item) => (
-              <div key={item.name} className="flex justify-between items-start gap-4">
-                <div>
-                  <span className="text-loft-cream font-medium">{item.name}</span>
-                  {item.desc && <p className="text-loft-stone text-sm mt-1">{item.desc}</p>}
-                </div>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <DescRow key={item.name} name={item.name} price={item.price} desc={item.desc} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
-        {/* Soft Drinks & Juices */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Soft Drinks & Juices
-          </h3>
+        {/* Soft Drinks */}
+        <MenuSection title="Soft Drinks & Juices">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-2">
             {softDrinks.map((item) => (
-              <div key={item.name} className="flex justify-between items-center">
-                <span className="text-loft-stone">{item.name}</span>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <PriceRow key={item.name} name={item.name} price={item.price} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         {/* Energy Drinks */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Energy Drinks
-          </h3>
+        <MenuSection title="Energy Drinks">
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-2">
             {energyDrinks.map((item) => (
-              <div key={item.name} className="flex justify-between items-center">
-                <span className="text-loft-stone">{item.name}</span>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <PriceRow key={item.name} name={item.name} price={item.price} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         {/* Long Drinks */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Long Drinks
-          </h3>
+        <MenuSection title="Long Drinks">
           <div className="space-y-4">
             {longDrinks.map((item) => (
-              <div key={item.name} className="flex justify-between items-start gap-4">
-                <div>
-                  <span className="text-loft-cream font-medium">{item.name}</span>
-                  {item.desc && <p className="text-loft-stone text-sm mt-1">{item.desc}</p>}
-                </div>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <DescRow key={item.name} name={item.name} price={item.price} desc={item.desc} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
-        {/* Special Mocktails & Shots */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-loft-amber border-b border-loft-amber/20 pb-3 mb-8">
-            Specials
-          </h3>
+        {/* Specials */}
+        <MenuSection title="Specials">
           <div className="space-y-4">
             {[...mocktailSpecials, ...shotSpecials].map((item) => (
-              <div key={item.name} className="flex justify-between items-start gap-4">
-                <div>
-                  <span className="text-loft-cream font-medium">{item.name}</span>
-                  {item.desc && <p className="text-loft-stone text-sm mt-1">{item.desc}</p>}
-                </div>
-                <span className="text-loft-amber font-medium">{item.price}</span>
-              </div>
+              <DescRow key={item.name} name={item.name} price={item.price} desc={item.desc} />
             ))}
           </div>
-        </div>
+        </MenuSection>
 
         <div className="mt-16 text-center">
-          <p className="text-loft-stone text-sm italic">
+          <p className="text-loft-cream-dim text-sm italic">
             Prices subject to change. Ask our staff about daily specials and promotions.
           </p>
         </div>

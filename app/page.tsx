@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import Ticker from "@/components/Ticker";
 import Drinks from "@/components/Drinks";
 import FullMenu from "@/components/FullMenu";
 import Events from "@/components/Events";
@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
+        <Ticker />
         <Drinks />
         <FullMenu />
         <Events />

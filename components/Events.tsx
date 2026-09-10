@@ -1,76 +1,87 @@
-import { Calendar, Mic, PartyPopper } from "lucide-react";
-
 const events = [
   {
-    icon: Mic,
-    title: "Live DJ Sets",
-    schedule: "Every Night",
-    description:
-      "Our resident and guest DJs spin everything from chart hits to throwback anthems. The dance floor comes alive after midnight.",
+    tag: "AFTER DARK",
+    day: "FRI",
+    date: "11",
+    month: "SEPT",
+    title: "Friday @ LOFT",
+    detail: "DJ TBC · 22:00 — Late",
+    desc: "Good drinks. Great people.",
   },
   {
-    icon: PartyPopper,
-    title: "Theme Nights",
-    schedule: "Weekly",
-    description:
-      "Fancy dress, neon parties, foam nights, and more. Follow our socials to see what's coming up this week.",
+    tag: "AFTER DARK",
+    day: "SAT",
+    date: "12",
+    month: "SEPT",
+    title: "Saturday Sessions",
+    detail: "DJ TBC · 21:00 — Late",
+    desc: "Cocktails, music and more.",
   },
   {
-    icon: Calendar,
-    title: "Special Events",
-    schedule: "Seasonal",
-    description:
-      "Opening parties, closing celebrations, holiday bashes, and guest performances. The biggest nights in Zante happen here.",
+    tag: "LOUNGE SESSIONS",
+    day: "SUN",
+    date: "13",
+    month: "SEPT",
+    title: "Sunday Chill",
+    detail: "Background music · 18:00 — Late",
+    desc: "Drinks, friends, good vibes.",
   },
 ];
 
 export default function Events() {
   return (
-    <section id="events" className="py-24 bg-loft-charcoal">
+    <section id="events" className="py-24 bg-loft-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-loft-terracotta uppercase tracking-[0.2em] text-sm mb-3">
-            What's On
+          <p className="text-loft-green uppercase tracking-[0.2em] text-sm mb-3">
+            Make plans. Make memories.
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-loft-cream mb-6">
-            Events & Entertainment
+            What&rsquo;s on at LOFT
           </h2>
-          <p className="text-loft-stone text-lg max-w-2xl mx-auto leading-relaxed">
-            There's always something happening at The Loft. Check what's on during your stay.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {events.map((event) => (
             <div
               key={event.title}
-              className="relative bg-loft-dark/50 border border-loft-amber/10 rounded-2xl p-8 overflow-hidden group hover:border-loft-amber/30 transition-colors duration-300"
+              className="bg-loft-dark-card border border-loft-green/15 rounded-2xl overflow-hidden hover:border-loft-green/40 transition-colors duration-300"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-loft-amber/5 rounded-bl-full -mr-4 -mt-4 group-hover:bg-loft-amber/10 transition-colors duration-300" />
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-loft-terracotta/10 rounded-lg flex items-center justify-center">
-                    <event.icon size={20} className="text-loft-terracotta" />
+              {/* Date badge */}
+              <div className="bg-loft-green/10 px-6 py-4 flex items-center justify-between">
+                <span className="text-loft-green uppercase tracking-[0.15em] text-xs font-semibold">
+                  {event.tag}
+                </span>
+                <div className="text-right">
+                  <span className="text-loft-cream-dim text-xs uppercase">{event.day}</span>
+                  <div className="flex items-baseline gap-1">
+                    <span className="font-display text-2xl font-bold text-loft-cream">{event.date}</span>
+                    <span className="text-loft-cream-dim text-xs uppercase">{event.month}</span>
                   </div>
-                  <span className="text-xs uppercase tracking-widest text-loft-amber font-medium">
-                    {event.schedule}
-                  </span>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-loft-cream mb-3">
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="font-display text-xl font-semibold text-loft-cream mb-2">
                   {event.title}
                 </h3>
-                <p className="text-loft-stone leading-relaxed">{event.description}</p>
+                <p className="text-loft-green text-sm font-medium mb-3">{event.detail}</p>
+                <p className="text-loft-cream-dim text-sm leading-relaxed">{event.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-12 text-center">
+          <p className="text-loft-cream-dim text-sm italic">
+            Demo event programme · Dates and performers to be confirmed.
+          </p>
           <a
             href="https://www.instagram.com/ocallaghansloft/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-loft-amber hover:text-loft-terracotta transition-colors font-medium"
+            className="inline-flex items-center gap-2 text-loft-green hover:text-loft-green-light transition-colors font-medium mt-4"
           >
             Follow @ocallaghansloft for updates
             <span aria-hidden="true">&rarr;</span>

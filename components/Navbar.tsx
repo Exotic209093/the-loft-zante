@@ -6,7 +6,8 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#drinks", label: "Drinks" },
+  { href: "#drinks", label: "Cocktails" },
+  { href: "#menu", label: "Full Menu" },
   { href: "#events", label: "Events" },
   { href: "#visit", label: "Visit Us" },
 ];
@@ -18,7 +19,10 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-loft-dark/90 backdrop-blur-md border-b border-loft-amber/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-display text-2xl font-bold text-loft-amber tracking-wide">
+          <Link
+            href="/"
+            className="font-display text-2xl font-bold text-loft-amber tracking-wide"
+          >
             THE LOFT
           </Link>
 

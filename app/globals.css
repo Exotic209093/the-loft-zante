@@ -5,7 +5,7 @@
 :root {
   --font-inter: "DM Sans", sans-serif;
   --font-playfair: "Playfair Display", serif;
-  --amber: #d6ae72;
+  --accent: #54c878;
   --ink: #171916;
   --cream: #f2eee5;
   --muted: #bbbdb0;
@@ -21,7 +21,7 @@ body {
   @apply bg-loft-dark text-loft-cream antialiased;
 }
 ::selection {
-  background: var(--amber);
+  background: var(--accent);
   color: var(--ink);
 }
 a,
@@ -34,12 +34,12 @@ a {
     background 0.2s;
 }
 a:hover {
-  color: var(--amber);
+  color: var(--accent);
 }
 button:focus-visible,
 a:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--accent);
   outline-offset: 6px;
 }
 .shell {
@@ -138,7 +138,7 @@ summary:focus-visible {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 2.2px;
-  color: var(--amber);
+  color: var(--accent);
   line-height: 1.6;
 }
 .hero .eyebrow {
@@ -163,7 +163,7 @@ h3 {
   max-width: 1000px;
 }
 .hero h1 em {
-  color: var(--amber);
+  color: var(--accent);
 }
 .hero-description {
   font-size: 15px;
@@ -177,7 +177,7 @@ h3 {
   gap: 35px;
 }
 .button-primary {
-  background: var(--amber);
+  background: var(--accent);
   color: var(--ink);
   padding: 17px 23px;
   font-size: 12px;
@@ -187,7 +187,7 @@ h3 {
   gap: 30px;
 }
 .button-primary:hover {
-  background: #eac999;
+  background: #7bdf98;
   color: var(--ink);
 }
 .text-link {
@@ -195,7 +195,7 @@ h3 {
   align-items: center;
   gap: 15px;
   font-size: 12px;
-  border-bottom: 1px solid #d6ae7266;
+  border-bottom: 1px solid #54c87866;
   padding: 10px 0;
 }
 .hero-bottom {
@@ -219,7 +219,7 @@ h3 {
   position: absolute;
   right: 8%;
   bottom: 150px;
-  border: 1px solid #d6ae7280;
+  border: 1px solid #54c87880;
   width: 132px;
   height: 132px;
   border-radius: 50%;
@@ -227,9 +227,9 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--amber);
+  color: var(--accent);
   transform: rotate(12deg);
-  outline: 1px solid #d6ae7250;
+  outline: 1px solid #54c87850;
   outline-offset: 6px;
 }
 .hero-stamp span {
@@ -242,7 +242,7 @@ h3 {
   font-weight: 400;
 }
 .ticker {
-  background: var(--amber);
+  background: var(--accent);
   color: var(--ink);
   overflow: hidden;
   padding: 21px 0;
@@ -290,7 +290,7 @@ h3 {
   margin-top: 14px;
 }
 .section-heading h2 em {
-  color: var(--amber);
+  color: var(--accent);
 }
 .section-heading > p {
   color: var(--muted);
@@ -353,7 +353,7 @@ h3 {
   margin-top: 7px;
 }
 .favourite > span {
-  color: var(--amber);
+  color: var(--accent);
   font-size: 14px;
   padding-top: 6px;
 }
@@ -368,8 +368,8 @@ h3 {
   gap: 30px;
   margin: 60px 0 75px;
   padding: 30px 40px;
-  border: 1px solid #d6ae7255;
-  background: #d6ae7207;
+  border: 1px solid #54c87855;
+  background: #54c87807;
   overflow: hidden;
 }
 .happy-hour h3 {
@@ -377,7 +377,7 @@ h3 {
   margin-top: 8px;
 }
 .happy-hour h3 em {
-  color: var(--amber);
+  color: var(--accent);
 }
 .happy-hour > p {
   font-size: 14px;
@@ -393,7 +393,7 @@ h3 {
   right: 30px;
   font-size: 90px;
   font-weight: 400;
-  color: var(--amber);
+  color: var(--accent);
 }
 .menu-title {
   display: flex;
@@ -424,12 +424,12 @@ h3 {
     color 0.2s;
 }
 .category-tabs button:hover {
-  border-color: var(--amber);
+  border-color: var(--accent);
 }
 .category-tabs button[aria-pressed="true"] {
-  background: var(--amber);
+  background: var(--accent);
   color: var(--ink);
-  border-color: var(--amber);
+  border-color: var(--accent);
 }
 .cocktail-items {
   display: grid;
@@ -453,7 +453,7 @@ h3 {
   margin-top: 7px;
 }
 .cocktail-item > span {
-  color: var(--amber);
+  color: var(--accent);
   font-size: 13px;
   white-space: nowrap;
 }
@@ -481,7 +481,7 @@ h3 {
 .menu-accordion summary span {
   font-family: var(--font-inter);
   font-size: 24px;
-  color: var(--amber);
+  color: var(--accent);
   transition: transform 0.2s;
 }
 .menu-accordion[open] summary span {
@@ -525,7 +525,7 @@ footer .font-display {
   letter-spacing: 4px;
 }
 footer {
-  background: radial-gradient(ellipse at bottom, #d6ae7209, transparent 65%);
+  background: radial-gradient(ellipse at bottom, #54c87809, transparent 65%);
 }
 @media (min-width: 1600px) {
   .hero-content {
@@ -588,7 +588,7 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 16px 25px;
-    border-bottom: 1px solid #d6ae7244;
+    border-bottom: 1px solid #54c87844;
   }
   .mobile-links a {
     padding: 17px 0;
@@ -737,7 +737,7 @@ footer {
 
 /* Real venue photography and the branded spirits feature. */
 .hero-hours {
-  color: var(--amber);
+  color: var(--accent);
   font-size: 10px;
   letter-spacing: 2px;
   margin: -12px 0 26px;
@@ -814,8 +814,8 @@ footer {
   gap: 65px;
   margin: 60px 0 75px;
   padding: 40px;
-  border: 1px solid #d6ae7255;
-  background: #d6ae7207;
+  border: 1px solid #54c87855;
+  background: #54c87807;
 }
 .spirits-feature h3 {
   font-size: clamp(28px, 3vw, 40px);
@@ -823,7 +823,7 @@ footer {
   margin-top: 16px;
 }
 .spirits-feature h3 em {
-  color: var(--amber);
+  color: var(--accent);
 }
 .spirits-feature > div > p:not(.eyebrow) {
   color: var(--muted);
@@ -862,7 +862,7 @@ footer {
   margin: 20px 0 25px;
 }
 .evening-copy h2 em {
-  color: var(--amber);
+  color: var(--accent);
 }
 .evening-copy > p:not(.eyebrow) {
   font-size: 15px;
@@ -949,7 +949,7 @@ footer {
   margin: 17px 0 25px;
 }
 .drinks-intro h2 em {
-  color: var(--amber);
+  color: var(--accent);
 }
 .drinks-intro > div > p:last-child {
   font-size: 14px;
@@ -963,7 +963,7 @@ footer {
   object-position: center 40%;
 }
 .house-menu {
-  border-top: 1px solid #d6ae7260;
+  border-top: 1px solid #54c87860;
 }
 .house-menu-nav {
   display: flex;
@@ -983,7 +983,7 @@ footer {
 }
 .house-menu-nav button:hover,
 .house-menu-nav button[aria-pressed="true"] {
-  color: var(--amber);
+  color: var(--accent);
 }
 .house-menu-nav button[aria-pressed="true"]::after {
   content: "";
@@ -992,7 +992,7 @@ footer {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--amber);
+  background: var(--accent);
 }
 .house-menu-content {
   padding: 48px 32px 0;
@@ -1029,11 +1029,11 @@ footer {
   margin-bottom: 40px;
 }
 .house-menu-group h4 {
-  color: var(--amber);
+  color: var(--accent);
   font-family: var(--font-playfair);
   font-size: 25px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #d6ae7233;
+  border-bottom: 1px solid #54c87833;
   margin-bottom: 10px;
 }
 .house-menu-item {
@@ -1057,7 +1057,7 @@ footer {
   border-bottom: 1px dotted #ffffff26;
 }
 .house-menu-price {
-  color: var(--amber);
+  color: var(--accent);
   font-size: 15px;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;

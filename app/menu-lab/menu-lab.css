@@ -11,7 +11,7 @@
   margin: 15px 0 22px;
 }
 .menu-lab-header h1 em {
-  color: var(--amber);
+  color: var(--accent);
 }
 .menu-lab-header > p:last-child {
   color: var(--muted);
@@ -26,14 +26,14 @@
   display: flex;
   gap: 16px;
   padding: 16px 20px;
-  border: 1px solid #d6ae7255;
+  border: 1px solid #54c87855;
   font-size: 13px;
 }
 .menu-lab-controls button span {
   opacity: 0.6;
 }
 .menu-lab-controls button[aria-pressed="true"] {
-  background: var(--amber);
+  background: var(--accent);
   color: var(--ink);
 }
 .menu-lab-note {

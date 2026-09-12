@@ -1,9 +1,9 @@
 import { MapPin, Clock, Instagram } from "lucide-react";
 
 const hours = [
-  { days: "Monday – Thursday", time: "16:00 – Late" },
-  { days: "Friday – Saturday", time: "16:00 – Late" },
-  { days: "Sunday", time: "16:00 – Late" },
+  { days: "Monday – Thursday", time: "19:30 – Late" },
+  { days: "Friday – Saturday", time: "19:30 – Late" },
+  { days: "Sunday", time: "19:30 – Late" },
 ];
 
 export default function Visit() {
@@ -34,7 +34,8 @@ export default function Visit() {
                   O&rsquo;Callaghan&rsquo;s LOFT
                 </h3>
                 <p className="text-loft-cream-dim leading-relaxed">
-                  Laganas Main Strip<br />
+                  Laganas Main Strip
+                  <br />
                   Zakynthos, Greece 29100
                 </p>
               </div>
@@ -51,8 +52,12 @@ export default function Visit() {
                 <div className="space-y-2">
                   {hours.map((h) => (
                     <div key={h.days} className="flex justify-between gap-4">
-                      <span className="text-loft-cream-dim text-sm">{h.days}</span>
-                      <span className="text-loft-green text-sm font-medium">{h.time}</span>
+                      <span className="text-loft-cream-dim text-sm">
+                        {h.days}
+                      </span>
+                      <span className="text-loft-green text-sm font-medium">
+                        {h.time}
+                      </span>
                     </div>
                   ))}
                 </div>

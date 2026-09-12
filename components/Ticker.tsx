@@ -1,26 +1,27 @@
 export default function Ticker() {
-  const items = [
+  const words = [
+    "IRISH SOUL. ISLAND SPIRIT.",
+    "ONE MORE ROUND?",
     "GOOD DRINKS. GREAT PEOPLE.",
-    "COCKTAILS & CONVERSATION",
-    "LATE NIGHTS AT LOFT",
-    "GOOD DRINKS. GREAT PEOPLE.",
-    "COCKTAILS & CONVERSATION",
-    "LATE NIGHTS AT LOFT",
   ];
-
   return (
-    <section className="py-6 bg-loft-green overflow-hidden">
-      <div className="flex animate-marquee whitespace-nowrap">
-        {items.map((item, i) => (
-          <span
-            key={i}
-            className="mx-8 text-loft-dark font-semibold uppercase tracking-[0.2em] text-sm flex items-center gap-8"
+    <div className="ticker">
+      <div className="ticker-track">
+        {[0, 1].map((copy) => (
+          <div
+            className="ticker-group"
+            key={copy}
+            aria-hidden={copy === 1 ? true : undefined}
           >
-            {item}
-            <span className="text-loft-dark/60">&#10035;</span>
-          </span>
+            {words.map((word) => (
+              <span key={word}>
+                {word}
+                <b>✳</b>
+              </span>
+            ))}
+          </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

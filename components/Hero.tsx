@@ -1,40 +1,48 @@
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-loft-dark via-loft-dark-card to-loft-dark z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-loft-green/8 via-transparent to-transparent z-0" />
-
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <p className="text-loft-green uppercase tracking-[0.3em] text-xs mb-4">
-          O&rsquo;Callaghan&rsquo;s
+    <section id="home" className="hero">
+      <img
+        className="hero-photo"
+        src="/images/loft/terrace.jpg"
+        alt="O'Callaghan's Loft rooftop terrace lit up above the Laganas strip at night"
+        fetchPriority="high"
+      />
+      <div className="hero-shade" />
+      <div className="hero-content shell">
+        <p className="eyebrow">
+          <span className="small-star">✳</span> LAGANAS, ZAKYNTHOS · GREECE
         </p>
-        <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl font-bold text-loft-cream leading-none mb-4">
-          LOFT
+        <h1>
+          Good nights.
+          <br />
+          Great <em>company.</em>
         </h1>
-        <p className="text-loft-cream-dim uppercase tracking-[0.35em] text-sm mb-8">
-          Club &bull; Lounge &bull; Cocktails
+        <p className="hero-description">
+          A little Irish soul. A lot of island spirit.
+          <br />
+          Cocktails, music &amp; nights that turn into stories.
         </p>
-        <p className="text-loft-cream-dim text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-          Drinks, music and late nights.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#menu"
-            className="inline-block bg-loft-green text-loft-dark font-semibold px-8 py-3 rounded-full hover:bg-loft-green-light transition-all duration-300 uppercase tracking-wider text-sm"
-          >
-            View menu
+        <p className="hero-hours">OPEN EVERY EVENING FROM 7:30 PM</p>
+        <div className="hero-actions">
+          <a href="#drinks" className="button-primary">
+            Explore the drinks <ArrowUpRight size={18} />
           </a>
-          <a
-            href="#visit"
-            className="inline-block border border-loft-green/40 text-loft-cream font-medium px-8 py-3 rounded-full hover:border-loft-green hover:text-loft-green transition-all duration-300 uppercase tracking-wider text-sm"
-          >
-            Find us
+          <a href="#events" className="text-link">
+            See what’s on <ArrowUpRight size={17} />
           </a>
         </div>
+      </div>
+      <div className="hero-bottom shell">
+        <a href="#drinks">
+          <ArrowDown size={16} /> YOUR NIGHT STARTS HERE
+        </a>
+        <span>CLUB &nbsp; / &nbsp; LOUNGE &nbsp; / &nbsp; COCKTAILS</span>
+      </div>
+      <div className="hero-stamp" aria-hidden="true">
+        <span>O’CALLAGHAN’S</span>
+        <b>LOFT</b>
+        <span>ISLAND NIGHTS</span>
       </div>
     </section>
   );

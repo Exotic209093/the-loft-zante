@@ -9,13 +9,13 @@ const config: Config = {
     extend: {
       colors: {
         loft: {
-          green: "#2D8B4E",
-          "green-dark": "#1A5C32",
-          "green-light": "#3DA863",
-          dark: "#0A0F0A",
-          "dark-card": "#111911",
-          cream: "#F5F0E8",
-          "cream-dim": "#C8C0B0",
+          green: "#D6AE72",
+          "green-dark": "#9A743F",
+          "green-light": "#EBCB9C",
+          dark: "#171916",
+          "dark-card": "#20231F",
+          cream: "#F2EEE5",
+          "cream-dim": "#BBBDB0",
           gold: "#C9A84C",
           "gold-dim": "#8A7235",
         },
